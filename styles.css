@@ -26,36 +26,43 @@ h1, h2 {
   padding: 20px;
 }
 
+/* Recipe card container styles */
 .recipe-card {
   display: flex; /* Align items horizontally */
-  align-items: center; /* Vertically center align the image and details */
-  margin: 20px;
-  border: 1px solid #ddd;
+  align-items: center; /* Vertically align the image and text */
+  margin-top: 12px;
+  border: 1px solid #ddd; /* Light gray border */
   padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px; /* Rounded corners for the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+  overflow: hidden; /* Prevent image overflow issues */
 }
 
+/* Image styles */
 .recipe-image {
-  width: 150px; /* Adjust width as needed */
-  height: auto; /* Keeps the image's aspect ratio */
-  border-radius: 8px;
-  margin-right: 20px; /* Add space between the image and the text */
+  width: 140px; /* Fixed width to ensure square aspect ratio */
+  height: auto; /* Fixed height to ensure square aspect ratio */
+  object-fit: cover; /* Crops the image to fit within the square */
+  border-radius: 10px; /* Optional: Rounded corners for aesthetic */
+  display: block; /* Ensure proper rendering */
+  margin-right: 24px; /* Space between the image and the text */
 }
 
+/* Recipe details (text) styles */
 .recipe-details h3 {
-  margin: 0;
+  margin: 0; /* Remove default margin */
 }
 
 .recipe-details h3 a {
-  color: #4B0082;
-  text-decoration: none;
+  color: #4B0082; /* Purple link color */
+  text-decoration: none; /* Remove underline for links */
 }
 
 .recipe-details p {
-  color: #555;
-  margin-top: 5px;
+  color: #666666; /* Light gray text */
+  margin-top: 5px; /* Space above the description */
 }
+
 
 .comments-section {
   margin-top: 20px;
@@ -73,23 +80,60 @@ h1, h2 {
   border-radius: 5px;
 }
 
-#comment-form {
-  display: flex;
-  flex-direction: column;
+/* Shared input and textarea styles */
+.input-style {
+  padding: 8px; /* Inner padding */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 14px; /* Font size */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding in width */
+  margin-top: 8px; /* Space above */
+  margin-bottom: 12px; /* Space below */
 }
 
-#comment-input {
-  margin-top: 10px;
-  padding: 8px;
-  resize: vertical;
+/* Specific textarea adjustments */
+textarea.input-style {
+  resize: vertical; /* Allow vertical resizing */
 }
 
-button[type="submit"] {
-  margin-top: 10px;
-  padding: 8px 10px;
-  background-color: #FFA500;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+/* Specific input focus state */
+.input-style:focus {
+  outline: none;
+  border-color: #ffbb00; /* Highlighted border color */
+  box-shadow: 0 0 5px rgba(255, 187, 0, 0.5); /* Subtle glow */
 }
+
+
+
+
+/* Submit Button */
+.button {
+  padding: 10px 20px; /* Button padding */
+  background-color: #ffbb00; /* Button color */
+  color: #333333; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  max-width: 200px; /* Prevent overly large buttons */
+  margin-right: auto; /* Align button to the right */
+  display: block; /* Ensure button behaves as a block-level element */
+}
+
+.button:hover {
+  background-color: #e6a500; /* Slightly darker yellow on hover */
+}
+
+
+/* Main content layout */
+main {
+  padding: 20px; /* Padding for left and right spacing */
+  margin: 0 auto;
+}
+
+footer {
+  padding: 20px; /* Padding for footer */
+  margin: 0 auto;
+}
+
+
