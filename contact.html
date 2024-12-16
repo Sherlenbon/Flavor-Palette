@@ -1,42 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SkyeLight Dining</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Contact Us</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="recipes.html">Recipes</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to SkyeLight Dining!</h1>
+        <nav>
+            <a href="index.html" aria-label="Go to homepage">Home</a>
+            <a href="recipes.html" aria-label="View all recipes">Recipes</a>
+            <a href="contact.html" aria-current="page" aria-label="Contact us">Contact</a>
+        </nav>
+    </header>
 
-  <main>
-    <section class="contact-form">
-      <h2>Get in Touch</h2>
-      <form action="submit_contact_form" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" class="input-style" required>
-      
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" class="input-style" required>
-      
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" class="input-style" required></textarea>
-      
-        <button type="submit" class="button">Submit</button>
-      </form>
-      
-    </section>
-  </main>
+    <!-- Main Content -->
+    <main>
+        <h2>Get in Touch</h2>
+        <p>Have questions or feedback? Fill out the form below, and we'll get back to you soon!</p>
 
-  <footer>
-    <p>&copy; 2024 Recipe Website. All rights reserved.</p>
-  </footer>
+        <form class="contact-form" id="contact-form">
+            <!-- Name Input -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="input-style" placeholder="Enter your name" required>
+            </div>
+
+            <!-- Email Input -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="input-style" placeholder="Enter your email" required>
+            </div>
+
+            <!-- Message Textarea -->
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" class="input-style" rows="5" placeholder="Your message"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="button">Submit</button>
+        </form>
+
+        <p id="form-success-message" style="display:none; color: green; margin-top: 15px;">Thank you! Your message has been sent.</p>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 SkyeLight Dining. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Form submission feedback
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("form-success-message").style.display = "block";
+            this.reset();
+        });
+    </script>
 </body>
 </html>
